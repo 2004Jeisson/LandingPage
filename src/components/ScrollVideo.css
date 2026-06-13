@@ -1,0 +1,172 @@
+/* ── Scroll Video Root ───────────────────────────────────────────────────── */
+.scroll-video-root {
+  height: 300vh;
+  position: relative;
+  width: 100%;
+}
+
+.scroll-video-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* Loading */
+.sv-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 20;
+}
+.sv-loading-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: dotBounce 1s ease-in-out infinite;
+}
+@keyframes dotBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(-12px); opacity: 1; }
+}
+
+/* ── Left text panel ─────────────────────────────────────────────────────── */
+.sv-text-side {
+  padding: 0 6% 0 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  z-index: 10;
+}
+
+.sv-text-inner { display: flex; flex-direction: column; gap: 20px; }
+
+.sv-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.sv-headline {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sv-headline-line { display: block; }
+
+.sv-body {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 400px;
+  font-weight: 300;
+}
+
+/* Progress dots */
+.sv-dots { display: flex; gap: 8px; }
+.sv-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  transition: background 0.3s, transform 0.3s;
+}
+.sv-dot.active {
+  background: var(--accent);
+  transform: scale(1.5);
+}
+
+/* ── Right product side ──────────────────────────────────────────────────── */
+.sv-product-side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding-right: 5%;
+}
+
+/* Radial glow behind device */
+.sv-glow {
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Device frame — oval/rounded showcase that hides the original background */
+.sv-device-frame {
+  position: relative;
+  width: min(720px, 95%);
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  /* Multi-layer border that imitates a premium device edge */
+  background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.01));
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 0 0 2px rgba(0,0,0,0.8),
+    0 0 0 3px rgba(255,255,255,0.03),
+    0 40px 100px rgba(0,0,0,0.8),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+  padding: 4px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* The dark "screen" bezel inside the frame */
+.sv-device-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.sv-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Glass reflection overlay */
+.sv-reflection {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.06) 0%,
+    transparent 50%,
+    rgba(0,0,0,0.1) 100%
+  );
+  pointer-events: none;
+}
+
+@media (max-width: 860px) {
+  .scroll-video-sticky { grid-template-columns: 1fr; }
+  .sv-text-side { padding: 100px 8% 30px; }
+  .sv-product-side { display: none; }
+}

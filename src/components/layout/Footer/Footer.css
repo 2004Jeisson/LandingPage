@@ -1,0 +1,16 @@
+.footer {
+  padding: 50px 6%;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-logo { height: 32px; opacity: 0.6; }
+
+.footer p {
+  font-size: 0.82rem;
+  color: #555;
+}

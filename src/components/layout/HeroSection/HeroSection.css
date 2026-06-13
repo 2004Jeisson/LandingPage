@@ -1,0 +1,107 @@
+.intro-section {
+  min-height: 100vh;
+  padding-top: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-inline: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background radial glow */
+.intro-section::before {
+  content: '';
+  position: absolute;
+  width: 900px; height: 900px;
+  background: radial-gradient(circle, rgba(0,255,204,0.07) 0%, transparent 65%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.intro-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.25em;
+  margin-bottom: 28px;
+}
+
+.intro-headline {
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 900;
+  letter-spacing: -3px;
+  line-height: 1.05;
+  margin-bottom: 28px;
+}
+
+.intro-sub {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+
+.intro-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+
+.buy-btn-hero {
+  background: #ffffff;
+  color: #000000;
+  padding: 18px 48px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+}
+.buy-btn-hero:hover {
+  background: #f4f4f5;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(255,255,255,0.15);
+}
+
+.ghost-btn {
+  background: transparent;
+  color: #a1a1aa;
+  padding: 18px 36px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.25s, border-color 0.25s;
+}
+.ghost-btn:hover { color: #ffffff; border-color: rgba(255,255,255,0.3); }
+
+/* Scroll hint */
+.scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.scroll-hint-line {
+  width: 1px; height: 60px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollLine 1.8s ease-in-out infinite;
+}
+@keyframes scrollLine {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(0.6); }
+}
