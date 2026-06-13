@@ -1,31 +1,53 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import type { ReactNode } from 'react';
+import { motion } from 'framer-motion';
 
 const FeatureCard = ({
   icon,
   title,
   desc,
-  delay,
+  image,
+  isActive,
+  animateStyle,
+  onClick,
+  onImageClick
 }: {
-  icon: string;
+  icon: ReactNode;
   title: string;
   desc: string;
-  delay: number;
+  image?: string;
+  isActive: boolean;
+  animateStyle: { x: number; scale: number; opacity: number; filter: string; zIndex: number };
+  onClick: () => void;
+  onImageClick: (e: React.MouseEvent) => void;
 }) => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-60px' });
   return (
     <motion.div
-      ref={ref}
-      className="feature-card glass-panel"
-      initial={{ opacity: 0, y: 60, scale: 0.95 }}
-      animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
-      transition={{ duration: 0.65, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
-      whileHover={{ y: -12, scale: 1.02, transition: { duration: 0.25 } }}
+      className={`feature-card glass-panel ${isActive ? 'active-card' : ''}`}
+      onClick={onClick}
+      animate={{
+        x: animateStyle.x,
+        scale: animateStyle.scale,
+        opacity: animateStyle.opacity,
+        filter: animateStyle.filter,
+      }}
+      style={{ zIndex: animateStyle.zIndex }}
+      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
     >
-      <div className="icon-wrapper">{icon}</div>
-      <h3>{title}</h3>
-      <p>{desc}</p>
+      {image && (
+        <div className="feature-card-image" onClick={isActive ? onImageClick : undefined}>
+          <img src={image} alt={title} />
+          {isActive && (
+            <div className="image-overlay-hint">
+              <span>Ver imagen</span>
+            </div>
+          )}
+        </div>
+      )}
+      <div className="feature-card-content">
+        <div className="icon-wrapper">{icon}</div>
+        <h3>{title}</h3>
+        <p>{desc}</p>
+      </div>
     </motion.div>
   );
 };

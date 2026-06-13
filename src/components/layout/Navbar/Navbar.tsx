@@ -29,8 +29,28 @@ const Navbar = () => {
 
       {/* Nav links */}
       <div className={`nav-links ${isOpen ? 'open' : ''}`}>
-        <a href="#features" onClick={() => setIsOpen(false)}>Características</a>
-        <a href="#specs" onClick={() => setIsOpen(false)}>Especificaciones</a>
+        <a 
+          href="#features" 
+          onClick={(e) => {
+            e.preventDefault();
+            setIsOpen(false);
+            const el = document.getElementById('features');
+            if(el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
+          }}
+        >
+          Características
+        </a>
+        <a 
+          href="#specs" 
+          onClick={(e) => {
+            e.preventDefault();
+            setIsOpen(false);
+            const el = document.getElementById('specs');
+            if(el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
+          }}
+        >
+          Especificaciones
+        </a>
         <a 
           href="https://wa.me/573208700771?text=Hola%20somos%20Castrillon%20Conect" 
           target="_blank" 
