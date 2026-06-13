@@ -37,7 +37,7 @@ const HeroSection = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.2 }}
       >
-        <a href="https://wa.me/573208700771?text=Hola%20somos%20Castrillon%20Conect" target="_blank" rel="noopener noreferrer" className="buy-btn-hero">Ordenar Ahora — $90.000</a>
+        <a href="https://wa.me/573208700771?text=Hola%20somos%20Castrillon%20Conect" target="_blank" rel="noopener noreferrer" className="buy-btn-hero">Ordenar Ahora — $90.000 COP</a>
         <a href="#features" className="ghost-btn">Ver características ↓</a>
       </motion.div>
 

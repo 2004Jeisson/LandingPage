@@ -16,15 +16,15 @@ const SCROLL_PANELS = [
     at: 0,
   },
   {
-    tag: 'Tecnología Militar',
-    headline: 'Alcance de\n2 Kilómetros',
-    body: 'Señal de largo alcance con protocolo de comunicación avanzado. Permanece conectado en cualquier terreno.',
+    tag: 'Alcance',
+    headline: 'Alcance de\n500 Metros',
+    body: 'Señal optimizada con protocolo de comunicación estable. Permanece conectado en tu grupo.',
     at: 0.35,
   },
   {
-    tag: 'IA Integrada',
-    headline: 'Silencio\nAbsoluto',
-    body: 'Cancelación activa de ruido con inteligencia artificial. Escucha y sé escuchado con claridad cristalina.',
+    tag: 'Entretenimiento & Utilidad',
+    headline: 'Micro SD &\nLinterna LED',
+    body: 'Ranura integrada para Micro SD para escuchar tu música favorita de forma autónoma y linterna LED para emergencias.',
     at: 0.7,
   },
 ];

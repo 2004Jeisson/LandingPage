@@ -19,20 +19,20 @@ const FeaturesSection = () => {
         <FeatureCard
           delay={0.0}
           icon="🎧"
-          title="Cancelación de Ruido Activa"
-          desc="Algoritmo de IA que elimina el ruido del viento y el motor. Tu voz, clara y nítida a 130 km/h."
+          title="Cancelación de Ruido"
+          desc="Cancelación activa que elimina el ruido del viento y el motor. Tu voz, clara y nítida a 130 km/h."
         />
         <FeatureCard
           delay={0.12}
           icon="📡"
           title="Alcance de 500mts"
-          desc="Protocolo de radio avanzado que mantiene la señal en montañas, túneles y zonas sin cobertura."
+          desc="Protocolo de radio avanzado que mantiene la señal estable en rutas abiertas y paseos grupales."
         />
         <FeatureCard
           delay={0.24}
           icon="🔋"
           title="24 Horas de Autonomía"
-          desc="Batería de 1200 mAh con carga rápida USB-C. Desde cero al 80 % en solo 40 minutos."
+          desc="Batería de larga duración optimizada para viajes largos. Olvídate de cargarlo a mitad de camino."
         />
         <FeatureCard
           delay={0.0}
@@ -42,15 +42,15 @@ const FeaturesSection = () => {
         />
         <FeatureCard
           delay={0.12}
-          icon="🔊"
-          title="Altavoz HD 40mm"
-          desc="Altavoces de alta fidelidad integrados. Músca y comunicaciones con calidad de estudio."
+          icon="🔦"
+          title="Linterna LED"
+          desc="Linterna integrada de alta potencia para emergencias, asistencia nocturna o señalización en carretera."
         />
         <FeatureCard
           delay={0.24}
-          icon="📲"
-          title="App Companion"
-          desc="Control total desde tu smartphone. Ajusta canales, EQ y grupos de hasta 8 personas en tiempo real."
+          icon="💾"
+          title="Ranura Micro SD"
+          desc="Soporte para tarjeta Micro SD propia. Escucha y disfruta de toda tu música favorita de forma 100% independiente."
         />
       </div>
     </section>
