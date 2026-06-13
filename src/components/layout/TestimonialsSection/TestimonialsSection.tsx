@@ -1,4 +1,3 @@
-import React from 'react';
 import FadeUp from '../../ui/FadeUp/FadeUp';
 import './TestimonialsSection.css';
 
