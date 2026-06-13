@@ -13,11 +13,14 @@
   --radius-lg: 16px;
 }
 
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth; 
+  background: #050505;
+}
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background: var(--bg);
+  background: transparent;
   color: #fff;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -62,4 +65,15 @@ body {
   max-width: 560px;
   line-height: 1.7;
   margin-bottom: 70px;
+}
+
+@media (max-width: 768px) {
+  .section-sub {
+    font-size: 0.95rem;
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+  .section-title {
+    letter-spacing: -1px;
+  }
 }

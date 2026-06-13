@@ -9,6 +9,7 @@
   padding-inline: 24px;
   position: relative;
   overflow: hidden;
+  z-index: 1; /* Creates stacking context for the background */
 }
 
 /* Background radial glow */
@@ -104,4 +105,45 @@
 @keyframes scrollLine {
   0%, 100% { opacity: 0.3; transform: scaleY(1); }
   50% { opacity: 1; transform: scaleY(0.6); }
+}
+
+@media (max-width: 768px) {
+  .intro-section {
+    padding-top: 100px;
+    padding-inline: 20px;
+    justify-content: flex-start;
+    min-height: 100svh;
+  }
+
+  .intro-headline {
+    font-size: clamp(2.4rem, 9vw, 3.5rem);
+    letter-spacing: -1.5px;
+  }
+
+  .intro-sub {
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+  }
+
+  .intro-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 50px;
+    width: 100%;
+  }
+
+  .buy-btn-hero {
+    width: 100%;
+    text-align: center;
+    padding: 16px 24px;
+    font-size: 1rem;
+  }
+
+  .ghost-btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 24px;
+    font-size: 0.95rem;
+  }
 }

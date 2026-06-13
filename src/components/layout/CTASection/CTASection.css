@@ -65,3 +65,14 @@
 @media (max-width: 860px) {
   .cta-content { padding: 50px 30px; }
 }
+
+@media (max-width: 480px) {
+  .cta-section { padding: 100px 16px; }
+  .cta-content { padding: 40px 20px; }
+  .buy-btn-large {
+    width: 100%;
+    text-align: center;
+    padding: 18px 24px;
+    font-size: 1.05rem;
+  }
+}
