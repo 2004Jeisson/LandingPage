@@ -39,6 +39,8 @@
   cursor: pointer;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   transform-origin: center center;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 .feature-card-image {
@@ -226,6 +228,8 @@
     width: 280px;
     height: 380px;
     padding: 22px;
+    /* Disable blur on mobile — very expensive on GPU */
+    filter: none !important;
   }
   .feature-card-image {
     height: 160px;

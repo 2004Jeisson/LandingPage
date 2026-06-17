@@ -63,7 +63,7 @@ const Navbar = () => {
           Opiniones
         </a>
         <a 
-          href="https://wa.me/573208700771?text=Hola%20somos%20Castrillon%20Conect" 
+          href={`https://wa.me/573208700771?text=${encodeURIComponent('Hola! Quiero pedir un Intercomunicador Q58-Max de Castrillon Connect.\n\n*1.* Precio actual?\n*2.* Especificaciones (alcance, bateria, resistencia al agua, Bluetooth)\n*3.* Costo de envio a mi ciudad?\n*4.* Metodos de pago disponibles?\n\nGracias!')}`}
           target="_blank" 
           rel="noopener noreferrer" 
           className="buy-btn"

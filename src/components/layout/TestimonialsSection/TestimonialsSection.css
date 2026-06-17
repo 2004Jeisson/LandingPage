@@ -42,6 +42,8 @@
   gap: 30px;
   width: max-content;
   animation: scroll-carousel 35s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .carousel-track:hover {
@@ -148,5 +150,11 @@
   .testimonial-card {
     width: 280px;
     padding: 25px 20px;
+    /* Disable hover transform during auto-scroll — causes jank on mobile */
+    transition: none;
+  }
+
+  .testimonial-card:hover {
+    transform: none;
   }
 }

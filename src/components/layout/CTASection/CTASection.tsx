@@ -1,14 +1,14 @@
 import FadeUp from '../../ui/FadeUp/FadeUp';
 import './CTASection.css';
 
-// Mensaje pre-llenado con opciones de compra
+// Mensaje pre-llenado con opciones de compra (sin emojis numerados para compatibilidad Android)
 const WA_MESSAGE = encodeURIComponent(
-  `¡Hola! 👋 Estoy interesado en el Intercomunicador Q58-Max de Castrillón Connect. ¿Me pueden dar información sobre lo siguiente?\n\n` +
-  `1️⃣ *Precio* — ¿Cuál es el precio actual?\n` +
-  `2️⃣ *Especificaciones* — Alcance, batería, impermeabilidad, Bluetooth.\n` +
-  `3️⃣ *Costo de envío* — ¿Cuánto cuesta el envío a mi ciudad?\n` +
-  `4️⃣ *Tipos de pago* — ¿Qué métodos de pago aceptan?\n\n` +
-  `¡Gracias! 🏍️`
+  `Hola! Quiero pedir un Intercomunicador Q58-Max de Castrillon Connect.\n\n` +
+  `*1.* Precio actual?\n` +
+  `*2.* Especificaciones (alcance, bateria, resistencia al agua, Bluetooth)\n` +
+  `*3.* Costo de envio a mi ciudad?\n` +
+  `*4.* Metodos de pago disponibles?\n\n` +
+  `Gracias!`
 );
 
 const WA_URL = `https://wa.me/573208700771?text=${WA_MESSAGE}`;

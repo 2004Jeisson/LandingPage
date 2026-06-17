@@ -1,6 +1,9 @@
 import type { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 
+// Skip GPU-heavy blur on mobile
+const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches;
+
 const FeatureCard = ({
   icon,
   title,
@@ -28,14 +31,14 @@ const FeatureCard = ({
         x: animateStyle.x,
         scale: animateStyle.scale,
         opacity: animateStyle.opacity,
-        filter: animateStyle.filter,
+        filter: isMobile ? 'none' : animateStyle.filter,
       }}
       style={{ zIndex: animateStyle.zIndex }}
-      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+      transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
     >
       {image && (
         <div className="feature-card-image" onClick={isActive ? onImageClick : undefined}>
-          <img src={image} alt={title} />
+          <img src={image} alt={title} loading="lazy" decoding="async" />
           {isActive && (
             <div className="image-overlay-hint">
               <span>Ver imagen</span>
