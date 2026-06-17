@@ -10,14 +10,14 @@ const featuresData = [
     id: 0,
     icon: <Headphones size={28} strokeWidth={1.5} />,
     title: "Cancelación de Ruido",
-    desc: "Cancelación activa que elimina el ruido del viento y el motor. Tu voz, clara y nítida a 130 km/h.",
+    desc: "Cancelación activa que elimina el ruido del viento y el motor. Tu voz, clara y nítida.",
     image: "/products/frames/0024.jpg"
   },
   {
     id: 1,
     icon: <Radio size={28} strokeWidth={1.5} />,
     title: "Alcance de 500mts",
-    desc: "Protocolo de radio avanzado que mantiene la señal estable en rutas abiertas y paseos grupales.",
+    desc: "Protocolo de radio avanzado que mantiene la señal estable en rutas abiertas y paseos a larga distancia.",
     image: "/caracterizticas/Alcance-de-500mts.webp"
   },
   {
@@ -30,9 +30,9 @@ const featuresData = [
   {
     id: 3,
     icon: <Droplets size={28} strokeWidth={1.5} />,
-    title: "Certificado IP67",
+    title: "Certificado IP65",
     desc: "Resistente al agua y al polvo. Construido para sobrevivir desde el desierto hasta la lluvia torrencial.",
-    image: "/caracterizticas/Certificado-IP67.webp"
+    image: "/caracterizticas/Certificado-IP65.webp"
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const featuresData = [
     id: 5,
     icon: <Disc size={28} strokeWidth={1.5} />,
     title: "Ranura Micro SD",
-    desc: "Soporte para tarjeta Micro SD propia. Escucha y disfruta de toda tu música favorita de forma 100% independiente.",
+    desc: "Soporte para tarjeta Micro SD propia. Escucha y disfruta de toda tu música favorita de forma 100% independiente y sin conexion a internet.",
     image: "/caracterizticas/Ranura-Micro-SD.webp"
   }
 ];
@@ -68,17 +68,17 @@ const FeaturesSection = () => {
   const getCardStyle = (idx: number) => {
     const total = featuresData.length;
     let relativeIndex = idx - activeIndex;
-    
+
     // Make it infinite wrap-around
     const half = Math.floor(total / 2);
     if (relativeIndex > half) relativeIndex -= total;
     if (relativeIndex < -half + (total % 2 === 0 ? 1 : 0)) relativeIndex += total;
 
     const absDistance = Math.abs(relativeIndex);
-    
+
     // Card spacing is 360px (320px width + 40px margin)
     const x = relativeIndex * 360;
-    
+
     let scale = 1;
     let opacity = 1;
     let filter = 'blur(0px)';
@@ -117,7 +117,7 @@ const FeaturesSection = () => {
         </p>
       </FadeUp>
 
-      <div 
+      <div
         className="features-carousel-viewport"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -153,7 +153,7 @@ const FeaturesSection = () => {
       {/* Lightbox Modal */}
       <AnimatePresence>
         {isModalOpen && (
-          <motion.div 
+          <motion.div
             className="lightbox-overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -163,8 +163,8 @@ const FeaturesSection = () => {
             <button className="lightbox-close" onClick={() => setIsModalOpen(false)}>
               <X size={32} />
             </button>
-            <motion.img 
-              src={activeFeature.image} 
+            <motion.img
+              src={activeFeature.image}
               alt={activeFeature.title}
               className="lightbox-image"
               initial={{ scale: 0.9, y: 20 }}

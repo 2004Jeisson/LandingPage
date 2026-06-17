@@ -57,8 +57,8 @@
 }
 
 .buy-btn-hero {
-  background: #ffffff;
-  color: #000000;
+  background: #25d366;
+  color: #ffffff;
   padding: 18px 48px;
   border-radius: 8px;
   text-decoration: none;
@@ -66,11 +66,15 @@
   font-size: 1.1rem;
   letter-spacing: 0.02em;
   transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
 }
 .buy-btn-hero:hover {
-  background: #f4f4f5;
+  background: #1ebe5d;
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 10px 30px rgba(255,255,255,0.15);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
 }
 
 .ghost-btn {
